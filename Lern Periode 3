@@ -1,0 +1,98 @@
+Der Trend der letzten Zeit: Ein Squid-Game-Spiel in Unity entwickeln
+
+
+Vor Kurzem ist der zweite Squid-Game-Film erschienen, und plötzlich war die Serie wieder in aller Munde. Ich habe gemerkt, 
+wie groß das Interesse daran immer noch ist, und dachte mir: Warum nicht versuchen, eines der bekanntesten Spiele, „Rotes Licht – Grünes Licht“, 
+selbst in Unity zu programmieren? Es schien mir die perfekte Gelegenheit zu sein, etwas Trendiges umzusetzen und dabei meine Fähigkeiten weiterzuentwickeln.
+
+
+using System;
+using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour
+{
+    [SerializeField] private Animator anim;
+    [SerializeField] private LayerMask FloorMask;
+    [SerializeField] private Transform FeetTransform, PlayerCamera, deathZone;
+    [SerializeField] private Rigidbody PlayerBody;
+    [SerializeField] private float Speed, Sensitivity, Jumpforce;
+    [SerializeField] private AudioSource feetSteps, shoot;
+
+    private Vector3 movementInput;
+    private Vector2 mouseInput;
+    private float xRot;
+    private bool isJumping, isWalking, isDying, isInDeathZone;
+
+    void Update()
+    {
+        if (isDying) return;
+
+        movementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+        mouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+
+        UpdateStates();
+        MovePlayer();
+        MoveCamera();
+        HandleDeath();
+    }
+
+    private void UpdateStates()
+    {
+        isJumping = !Physics.CheckSphere(FeetTransform.position, 0.1f, FloorMask);
+        isWalking = movementInput.magnitude > 0;
+
+        anim.SetBool("isJumping", isJumping);
+        anim.SetBool("isWalking", isWalking);
+
+        if (isWalking && !isJumping && !feetSteps.isPlaying)
+        {
+            feetSteps.loop = true;
+            feetSteps.Play();
+        }
+        else
+        {
+            feetSteps.loop = false;
+        }
+    }
+
+    private void MovePlayer()
+    {
+        Vector3 moveVector = transform.TransformDirection(movementInput) * Speed;
+        PlayerBody.velocity = new Vector3(moveVector.x, PlayerBody.velocity.y, moveVector.z);
+
+        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
+        {
+            PlayerBody.AddForce(Vector3.up * Jumpforce, ForceMode.Impulse);
+        }
+    }
+
+    private void MoveCamera()
+    {
+        xRot -= mouseInput.y * Sensitivity;
+        transform.Rotate(0f, mouseInput.x * Sensitivity, 0f);
+        PlayerCamera.localRotation = Quaternion.Euler(xRot, 0f, 0f);
+    }
+
+    private void HandleDeath()
+    {
+        if ((GameManager.headTime && (isWalking || isJumping)) || GameManager.headTimeFinish)
+        {
+            if (!isInDeathZone) return;
+
+            isDying = true;
+            anim.SetBool("isDying", true);
+            feetSteps.Stop();
+            shoot.Play();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        isInDeathZone = other.transform == deathZone;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform == deathZone) isInDeathZone = false;
+    }
+}
