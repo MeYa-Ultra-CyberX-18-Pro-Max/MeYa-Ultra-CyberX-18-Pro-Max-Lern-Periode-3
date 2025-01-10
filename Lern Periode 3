@@ -96,3 +96,5 @@ public class PlayerMovement : MonoBehaviour
         if (other.transform == deathZone) isInDeathZone = false;
     }
 }
+
+
