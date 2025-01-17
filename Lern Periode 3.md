@@ -121,14 +121,16 @@ Seit es VR-Brillen gibt, beschäftige ich mich intensiv mit diesem Thema. Mit Xc
 Früher habe ich ein Spiel im Play Store veröffentlicht. Aber ich denke, dass die echten Erfolgschancen bei Anwendungen für diese neuen VR-Brillen liegen. Im Play Store gibt es über 3,5 Millionen und im App Store fast 2 Millionen Apps. Es gibt dort also viele Konkurrenten, und es ist sehr schwer, aufzufallen.
 
 Mit Xcode und der Apple Vision Pro Plattform gibt es dagegen aktuell nur etwa 1000 Apps. Viele große Marken wie Instagram, Facebook oder Snapchat haben noch keine Anwendungen dort. Deshalb sehe ich hier eine große Chance. Solange der Markt neu ist und es nur wenige Konkurrenten gibt, werde ich weitere VR-Brillen-Apps entwickeln, bis eine davon erfolgreich wird.
+<img width="1728" alt="Screenshot 2025-01-17 at 15 44 27" src="https://github.com/user-attachments/assets/e597fcf7-a96c-4b4b-9be5-8ffd2da6dded" />
+<img width="949" alt="Screenshot 2025-01-17 at 15 44 30" src="https://github.com/user-attachments/assets/57c9d27b-01a6-4872-98ec-fb1a2f886524" />
+
 
 
 
 <img width="1728" alt="Screenshot 2025-01-17 at 11 23 01" src="https://github.com/user-attachments/assets/8cdac015-799c-400f-8fd1-88328c42105b" />
 <img width="1721" alt="Screenshot 2025-01-17 at 11 22 53" src="https://github.com/user-attachments/assets/c79971ae-d4af-4751-a813-0d9ae25760c4" />
 <img width="1728" alt="Screenshot 2025-01-17 at 11 39 01" src="https://github.com/user-attachments/assets/dee0a736-ad5c-4b01-88b0-99f5f735d670" />
-![apple-vision-pro-teaser_6269956](https://github.com/user-attachments/assets/389250fb-7628-4f76-9ca3-e0c4aea8ffc5)
-![vision-pro-gallery-measure-hero-202401_PF1_FMT_WHH](https://github.com/user-attachments/assets/b58dfb83-5013-440b-9b45-d18cbcc28e4a)
+
 
 
 ```swift
