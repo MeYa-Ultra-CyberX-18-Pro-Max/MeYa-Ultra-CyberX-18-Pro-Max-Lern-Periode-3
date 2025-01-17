@@ -127,7 +127,8 @@ Mit Xcode und der Apple Vision Pro Plattform gibt es dagegen aktuell nur etwa 10
 <img width="1728" alt="Screenshot 2025-01-17 at 11 23 01" src="https://github.com/user-attachments/assets/8cdac015-799c-400f-8fd1-88328c42105b" />
 <img width="1721" alt="Screenshot 2025-01-17 at 11 22 53" src="https://github.com/user-attachments/assets/c79971ae-d4af-4751-a813-0d9ae25760c4" />
 <img width="1728" alt="Screenshot 2025-01-17 at 11 39 01" src="https://github.com/user-attachments/assets/dee0a736-ad5c-4b01-88b0-99f5f735d670" />
-https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR5g8YCzZA1K4CU5Ap0bbXZdkbOKciEoJtmrlAcCc0301Or32hHaNum6-18KA![image](https://github.com/user-attachments/assets/9a12b65d-b021-40cb-b2e0-8d3e99d51c73)
+![apple-vision-pro-teaser_6269956](https://github.com/user-attachments/assets/389250fb-7628-4f76-9ca3-e0c4aea8ffc5)
+![vision-pro-gallery-measure-hero-202401_PF1_FMT_WHH](https://github.com/user-attachments/assets/b58dfb83-5013-440b-9b45-d18cbcc28e4a)
 
 
 ```swift
