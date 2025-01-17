@@ -5,7 +5,7 @@ Vor Kurzem ist der zweite Squid-Game-Film erschienen, und plötzlich war die Ser
 wie groß das Interesse daran immer noch ist, und dachte mir: Warum nicht versuchen, eines der bekanntesten Spiele, „Rotes Licht – Grünes Licht“, 
 selbst in Unity zu programmieren? Es schien mir die perfekte Gelegenheit zu sein, etwas Trendiges umzusetzen und dabei meine Fähigkeiten weiterzuentwickeln.
 
-
+```csharp
 using System;
 using UnityEngine;
 
@@ -96,5 +96,11 @@ public class PlayerMovement : MonoBehaviour
         if (other.transform == deathZone) isInDeathZone = false;
     }
 }
+```
+
+<img width="1690" alt="Screenshot 2025-01-10 at 11 27 29" src="https://github.com/user-attachments/assets/a80db62f-9465-4048-b1e0-f8172fb8b8b0" />
+
+
+
 
 
