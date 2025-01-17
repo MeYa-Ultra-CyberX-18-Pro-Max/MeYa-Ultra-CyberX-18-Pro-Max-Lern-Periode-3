@@ -104,3 +104,69 @@ public class PlayerMovement : MonoBehaviour
 
 
 
+17.01.2025
+Heute habe ich an einem VR-Spiel mit Apple Xcode gearbeitet, anders als Unity.
+Seit es VR-Brillen gibt, beschäftige ich mich intensiv mit diesem Thema. Mit Xcode ein VR-Spiel zu entwickeln, war eine Herausforderung. Ich habe oft Hilfe aus dem Internet geholt, weil es anders als Unity ist und Sprachen wie Swift, Python und C++ verwendet. Trotzdem habe ich es geschafft, ein 3D-Jenga-Spiel zu erstellen, das mit einer VR-Brille gespielt wird.
+
+Früher habe ich ein Spiel im Play Store veröffentlicht. Aber ich denke, dass die echten Erfolgschancen bei Anwendungen für diese neuen VR-Brillen liegen. Im Play Store gibt es über 3,5 Millionen und im App Store fast 2 Millionen Apps. Es gibt dort also viele Konkurrenten, und es ist sehr schwer, aufzufallen.
+
+Mit Xcode und der Apple Vision Pro Plattform gibt es dagegen aktuell nur etwa 1000 Apps. Viele große Marken wie Instagram, Facebook oder Snapchat haben noch keine Anwendungen dort. Deshalb sehe ich hier eine große Chance. Solange der Markt neu ist und es nur wenige Konkurrenten gibt, werde ich weitere VR-Brillen-Apps entwickeln, bis eine davon erfolgreich wird.
+
+
+
+<img width="1728" alt="Screenshot 2025-01-17 at 11 23 01" src="https://github.com/user-attachments/assets/8cdac015-799c-400f-8fd1-88328c42105b" />
+<img width="1721" alt="Screenshot 2025-01-17 at 11 22 53" src="https://github.com/user-attachments/assets/c79971ae-d4af-4751-a813-0d9ae25760c4" />
+<img width="1728" alt="Screenshot 2025-01-17 at 11 39 01" src="https://github.com/user-attachments/assets/dee0a736-ad5c-4b01-88b0-99f5f735d670" />
+
+
+```swift
+
+
+//
+//  ImmersiveView.swift
+//  Jenga
+//
+//  Created by Donovan Hutchinson on 26/06/2024.
+//
+
+import SwiftUI
+
+import SwiftUI
+import RealityKit
+import RealityKitContent
+
+struct ImmersiveView: View {
+    @ObservedObject var viewModel: SharedViewModel
+
+    var body: some View {
+        RealityView { content in
+            let floor = viewModel.generateFloor()
+            content.add(floor)
+
+            if let table = loadScene() {
+                table.position.x = viewModel.startingPositionX + viewModel.pieceWidth
+                table.position.y = viewModel.startingPositionY
+                table.position.z = viewModel.startingPositionZ - viewModel.pieceWidth
+           
+                content.add(table)
+            }
+            
+            // Add pieces
+            content.add(viewModel.tower)
+        } update: { content in
+
+        }
+        .installGestures()
+    }
+    
+    private func loadScene() -> Entity? {
+      try? Entity.load(named: "Scene", in: realityKitContentBundle)
+    }
+}
+
+#Preview {
+    ImmersiveView(viewModel: SharedViewModel())
+}
+```
+
+
