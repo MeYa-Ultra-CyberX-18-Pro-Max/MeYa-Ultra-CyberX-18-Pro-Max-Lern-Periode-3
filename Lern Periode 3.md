@@ -104,6 +104,16 @@ public class PlayerMovement : MonoBehaviour
 
 
 
+
+
+
+
+
+
+
+
+
+
 17.01.2025
 Heute habe ich an einem VR-Spiel mit Apple Xcode gearbeitet, anders als Unity.
 Seit es VR-Brillen gibt, beschäftige ich mich intensiv mit diesem Thema. Mit Xcode ein VR-Spiel zu entwickeln, war eine Herausforderung. Ich habe oft Hilfe aus dem Internet geholt, weil es anders als Unity ist und Sprachen wie Swift, Python und C++ verwendet. Trotzdem habe ich es geschafft, ein 3D-Jenga-Spiel zu erstellen, das mit einer VR-Brille gespielt wird.
